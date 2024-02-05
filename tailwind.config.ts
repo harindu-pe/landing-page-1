@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,6 +18,14 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        jost: ["var(--font-jost)", "sans-serif"],
+        dmSerif: ["var(--font-dm_serif_display)", "sans-serif"],
+      },
+      backgroundImage: {
+        hero: "url(/hero/bg.jpg)",
+        grid: "url(/grid.png)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -27,10 +35,13 @@ const config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          custom: "#292f36",
+          hover: "#343e4a",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          custom: "#4d5053",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -43,6 +54,9 @@ const config = {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          custom1: "#cda274",
+          custom2: "#f4f0ec",
+          hover: "#b88c5d",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -75,6 +89,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
